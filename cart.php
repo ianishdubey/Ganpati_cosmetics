@@ -1,6 +1,7 @@
+
 <?php 
-session_start();
-include("includes/db.php");  
+session_start(); // function is used to manage user sessions, ensuring that cart items are associated with the correct user.
+include("includes/db.php");  //for database connection
 include("functions/functions.php");
 ?>
 <!DOCTYPE html>
@@ -150,7 +151,7 @@ include("functions/functions.php");
      <form action="cart.php" method="post" enctype="multipart-form-data">
        <h1>Shopping Cart</h1>
        <?php
-       $ip_add=getUserIp();
+       $ip_add=getUserIp();//Retrieves cart items from the database using the user's IP address 
        $select_cart="select * from cart where ip_add='$ip_add'";
        $run_cart=mysqli_query($con,$select_cart);
        $count=mysqli_num_rows($run_cart);
@@ -231,15 +232,15 @@ include("functions/functions.php");
    </div>
 
 <?php
-
+ // Handles update cart functionality
 function update_cart(){
-  global $con;
+  global $con; // give access to database connection within function
   if (isset($_POST['update'])){
     foreach ($_POST['remove'] as $remove_id) {
       $delete_product="delete from cart where p_id='$remove_id'";
       $run_del=mysqli_query($con,$delete_product);
       if ($run_del) {
-        echo "<script>window.open('cart.php','_self')</script>";
+        echo "<script>window.open('cart.php','_self')</script>"; //show updated cart
       }
 
     }

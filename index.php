@@ -843,7 +843,6 @@ while ($row= mysqli_fetch_array($run_slider)) {
 <div class="icons-container">
 
 <?php
-
 $get_boxes="select * from boxes_section";
 $run_box=mysqli_query($con,$get_boxes);
 while ($row=mysqli_fetch_array($run_box)) {
@@ -854,17 +853,17 @@ while ($row=mysqli_fetch_array($run_box)) {
     
 
 
-  ?>
+    ?>
 
-    <div class="icons">
-        <i class="<?php echo $box_icon; ?>"></i>
-        <h3><?php echo $box_title ?></h3>
-        <p><?php echo $box_desc ?></p>
-
-    </div>
-
+<div class="icons">
+    <i class="<?php echo $box_icon; ?>"></i>
+    <h3><?php echo $box_title ?></h3>
+    <p><?php echo $box_desc ?></p>
     
-    <?php } ?>
+</div>
+
+
+<?php } ?>
 </div>
 
 </section>
@@ -874,22 +873,22 @@ while ($row=mysqli_fetch_array($run_box)) {
 <!-- newsletter section starts  -->
 
 <section class="newsletter" id="newsletter">
-
+    
     <h1>Newsletter</h1>
     <p>Get In Touch For Latest Discounts And Updates</p>
     <form action="contactus.php" method="post">
-
-                  
-                        <input type="text" placeholder="Enter Your Name" ><br>
-                   
-                    
+        
+        
+        <input type="text" placeholder="Enter Your Name" ><br>
+        
+        
         <input type="email" placeholder="Enter Your Email">
-
-                        <textarea type="txt" placeholder="Enter Your Message"></textarea>
-                  
+        
+        <textarea type="txt" placeholder="Enter Your Message"></textarea>
+        
         <input type="submit" class="btn" >
     </form>
-
+    
 </section>
 
 <!-- newsletter section ends -->
@@ -900,31 +899,31 @@ while ($row=mysqli_fetch_array($run_box)) {
 
 
 
-  <footer class="footer" id="footer">
-  <footer class="footer" id="footer">
-    <div class="container">
-        <div class="credit">
-            <h1>About us: </h1>
-            <h4>
-                Our e-commerce platform is designed to provide customers with a seamless and enjoyable shopping experience. 
-                With a wide range of products from various categories including fashion, electronics, beauty, and everyday essentials, 
-                we strive to meet all your shopping needs in one place. We prioritize quality and customer satisfaction, ensuring that 
-                every item sold on our platform meets the highest standards. Our user-friendly interface, secure payment options, and fast 
-                shipping guarantee a hassle-free shopping experience. Join us to enjoy exclusive deals, discounts, and a personalized shopping journey.
-</h4>
-        </div>
+<footer class="footer" id="footer">
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="credit">
+                <h1>About us: </h1>
+                <h4>
+                    Our e-commerce platform is designed to provide customers with a seamless and enjoyable shopping experience. 
+                    With a wide range of products from various categories including fashion, electronics, beauty, and everyday essentials, 
+                    we strive to meet all your shopping needs in one place. We prioritize quality and customer satisfaction, ensuring that 
+                    every item sold on our platform meets the highest standards. Our user-friendly interface, secure payment options, and fast 
+                    shipping guarantee a hassle-free shopping experience. Join us to enjoy exclusive deals, discounts, and a personalized shopping journey.
+                </h4>
+            </div>
         <p class="credit">Copyright &copy; <span>2024</span> | all rights reserved. </span></p>
-
+        
     </div>
+    
+</footer>
 
 </footer>
 
-  </footer>
-
 <!-- footer section ends -->
 <!-- footer section ends -->
 
-  </nav></div></header>  
+</nav></div></header>  
 
 
 <!-- jquery cdn link  -->
@@ -935,7 +934,7 @@ while ($row=mysqli_fetch_array($run_box)) {
 
 <!-- custom js file link  -->
 <script src="main/js.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
 <script>
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -957,6 +956,8 @@ function showSlides(n) {
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";  
   }
+// Ensures only one dot will be marked as active at any time.
+// Prevents multiple dots from being highlighted simultaneously.
   for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
   }

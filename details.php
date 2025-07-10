@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); //to initiate a session for tracking customer login and shopping cart details.
 include("includes/db.php");
 
 include("functions/functions.php");
@@ -7,7 +7,7 @@ include("functions/functions.php");
 
 
 <?php
-
+//Part which tries to fetchh data of products
 if(isset($_GET['pro_id'])){
   $pro_id=$_GET['pro_id'];
   $get_product="select * from products where product_id='$pro_id'";
