@@ -32,4 +32,4 @@ A simple PHP and MySQL-based website for Ganpati Cosmetics — designed to displ
 ### 📥 Clone the Project
 ```bash
 git clone https://github.com/your-username/Ganpati_Cosmetics.git
-cd Ganpati_Cosmetics
+
